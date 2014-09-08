@@ -17,10 +17,12 @@ This software implements the temporal score described on page 4 of the
 following paper.  A detailed description of the temporal score is in its
 own section below.
 
-| Identifying Adverse Drug Events by Relational Learning
-| David Page, Vitor Santos Costa, Sriraam Natarajan, Aubrey Barnard, Peggy Peissig, Michael Caldwell
-| AAAI 2012
-| http://www.aaai.org/ocs/index.php/AAAI/AAAI12/paper/view/4941
+<blockquote>
+Identifying Adverse Drug Events by Relational Learning.
+David Page, Vitor Santos Costa, Sriraam Natarajan, Aubrey Barnard, Peggy Peissig, Michael Caldwell.
+AAAI 2012.
+http://www.aaai.org/ocs/index.php/AAAI/AAAI12/paper/view/4941
+</blockquote>
 
 For more information on the IMEDS program and the research methods it
 and collaborators are developing see http://imeds.reaganudall.org.
