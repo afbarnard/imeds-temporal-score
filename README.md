@@ -145,10 +145,10 @@ TODO
 Contact
 -------
 
-Contact me about this software through GitHub.  See if there is an
-[existing
-issue](https://github.com/afbarnard/imeds-temporal-score/issues) and
-then [open an
+Contact me about this software through GitHub.  First, see if there are
+any [relevant
+issues](https://github.com/afbarnard/imeds-temporal-score/issues?q=is%3Aissue).
+If not, then [open a new
 issue](https://github.com/afbarnard/imeds-temporal-score/issues/new) to
 report a bug or ask a new question.  If you have academic inquiries you
 can find my e-mail address in the git log.
