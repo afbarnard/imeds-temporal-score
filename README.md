@@ -139,7 +139,45 @@ table analysis.
 Temporal Score Explanation
 --------------------------
 
-TODO
+The temporal score is an evaluation of the likelihood that a
+drug-condition pair is an adverse drug event.  The evaluation starts
+with defining sets of drugs and conditions, 'D' and 'C'.  Then for every
+drug-condition pair '(d,c)' in the Cartesian product 'D x C', the
+temporal score for that pair is computed as in the following equation
+where 't' is the start time of a drug or condition occcurrence.
+
+    Pr(t_d < t_c | d, c) /
+    (Pr(t_d < t_C | d, C) * Pr(t_D < t_c | D, c))
+
+The term in the numerator estimates the probability that the drug occurs
+before the condition in patients that have both.  The terms in the
+denominator estimate (1) the probability that the drug occurs before any
+of the conditions in patients that have the drug and any of the
+conditions and (2) the probability that any of the drugs occur before
+the condition in patients that have any of the drugs and the condition.
+The denominator terms "normalize" for drugs that commonly occur with
+many conditions and conditions that commonly occur with many drugs.
+
+The above probabilities are estimated by counting patients with the
+desired characteristics and considering only the first occurrence of a
+drug or condition in a patient.  Pseudocounts are added to ensure
+positive estimates.  Thus, having limited the data to only first
+occurrences, the temporal score is estimated with the following equation
+in terms of counts.
+
+    (#(t_d < t_c) / #(d, c)) /
+    ( (#(t_d < t_C) / #(d, C)) * (#(t_D < t_c) / #(D, c)) )
+
+One pseudocount ('m') is added to the numerator of each probability
+estimate and two pseudocounts are added to each denominator.  To
+illustrate, consider the first probability estimate in the following
+form.  (The two other probability estimates are treated analogously.)
+
+    (#(t_d < t_c) + m) / (#(t_d < t_c) + m + #(t_d >= t_c) + m)
+
+We have found that the temporal score works better when there are more
+drugs and conditions, presumably because the normalizing terms are more
+accurate.
 
 
 Contact
